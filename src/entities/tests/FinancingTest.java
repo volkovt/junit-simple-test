@@ -9,9 +9,11 @@ public class FinancingTest {
 	
 	@Test
 	public void constructorShouldPassWhenValidInformation() {
-		Assertions.assertDoesNotThrow(() -> {
-			new Financing(100000.0, 2000.0, 80);
-		});
+		Financing f = new Financing(100000.0, 2000.0, 80);
+		
+		Assertions.assertEquals(100000.0, f.getTotalAmount());
+		Assertions.assertEquals(2000.0, f.getIncome());
+		Assertions.assertEquals(80, f.getMonths());
 	}
 	
 	@Test

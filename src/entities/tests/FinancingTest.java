@@ -15,7 +15,7 @@ public class FinancingTest {
 	}
 	
 	@Test
-	public void constructorShouldThrowWhenInValidInformation() {
+	public void constructorShouldThrowIllegalArgumentWhenInValidInformation() {
 		Assertions.assertThrows(IllegalArgumentException.class, () -> new Financing(100000.0, 2000.0, 20));
 	}
 	
@@ -31,7 +31,7 @@ public class FinancingTest {
 	}
 	
 	@Test
-	public void totalAmountShouldThrowWhenInvalidValue() {
+	public void totalAmountShouldThrowIllegalArgumentWhenInvalidValue() {
 		Financing f = new Financing(100000.0, 2000.0, 80);
 		Assertions.assertThrows(IllegalArgumentException.class, () -> {
 			f.setTotalAmount(200000.0);
@@ -49,7 +49,7 @@ public class FinancingTest {
 	}
 	
 	@Test
-	public void incomeShouldThrowWhenInvalidValue() {
+	public void incomeShouldThrowIllegalArgumentWhenInvalidValue() {
 		Financing f = new Financing(100000.0, 2000.0, 80);
 		Assertions.assertThrows(IllegalArgumentException.class, () -> {
 			f.setIncome(900.0);
@@ -68,7 +68,7 @@ public class FinancingTest {
 	}
 	
 	@Test
-	public void monthShouldThrowWhenInvalidValue() {
+	public void monthShouldThrowIllegalArgumentWhenInvalidValue() {
 		Financing f = new Financing(100000.0, 2000.0, 80);
 		Assertions.assertThrows(IllegalArgumentException.class, () -> {
 			f.setMonths(20);
